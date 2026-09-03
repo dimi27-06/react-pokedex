@@ -7,11 +7,14 @@ function App() {
       
       <PokemonCard /> 
 
-      
-
     </div>
+
     
   );
-}
+
+
+
+  
+  }
 
 export default App;
