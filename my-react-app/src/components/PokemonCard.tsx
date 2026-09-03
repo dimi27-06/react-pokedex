@@ -8,7 +8,7 @@ function PokemonCard() {
         />
       </figure>
       <figcaption>
-        <h1>Bulbisard</h1>
+        <h1>Bulbisarre</h1>
       </figcaption>
     </div>
   );
