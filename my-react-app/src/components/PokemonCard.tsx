@@ -21,10 +21,11 @@ function PokemonCard() {
         ) : (
           <p>???</p>
         )}
-      </figure>
+      
       <figcaption>
         <h1>{pokemon.name}</h1>
       </figcaption>
+      </figure>
     </div>
   );
 }
