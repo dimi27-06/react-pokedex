@@ -1,30 +1,40 @@
-import './App.css'
-import PokemonCard from './components/PokemonCard'
+import { useState } from 'react';
+import './App.css';
+import PokemonCard from './components/PokemonCard';
 
 const pokemonList = [
   {
-    name: "bulbasaur",
+    name: 'bulbasaur',
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
   },
   {
-    name: "mew",
+    name: 'mew',
+    imgSrc:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png',
   },
 ];
 
 function App() {
-  return (
-    <div pokemon-card="App">
-      <PokemonCard pokemon={pokemonList[0]} />
+  const [pokemonName, setPokemonName] = useState('bulbasaur');
 
-    </div>
+  const pokemon = pokemonList.find((pokemonItem) => pokemonItem.name === pokemonName);
 
-    
-  );
-
-
-
-  
+  if (pokemon == null) {
+    throw new Error('Invalid pokemon name');
   }
+
+  return (
+    <div>
+      <button type="button" onClick={() => setPokemonName('bulbasaur')}>
+        bulbasaur
+      </button>
+      <button type="button" onClick={() => setPokemonName('mew')}>
+        mew
+      </button>
+      <PokemonCard pokemon={pokemon} />
+    </div>
+  );
+}
 
 export default App;
